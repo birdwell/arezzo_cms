@@ -25,6 +25,8 @@ keystone.init({
 	'user model': 'User',
 });
 
+keystone.set('signin logo', '../images/logo.png');
+
 // Load your project's Models
 keystone.import('models');
 
