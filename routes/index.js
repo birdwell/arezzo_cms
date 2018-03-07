@@ -29,6 +29,7 @@ keystone.pre('render', middleware.flashMessages);
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
+	api: importRoutes('./api'),
 };
 
 // Setup Route Bindings
@@ -38,5 +39,33 @@ exports = module.exports = function (app) {
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+	app.get('/api/event', routes.api.event.list);
+	app.get('/api/event/:id', routes.api.event.get);
+	app.post('/api/event', routes.api.event.create);
+	app.put('/api/event/:id', routes.api.event.update);
+	app.delete('/api/event/:id', routes.api.event.remove);
 
+	app.get('/api/food', routes.api.food.list);
+	app.get('/api/food/:id', routes.api.food.get);
+	app.post('/api/food', routes.api.food.create);
+	app.put('/api/food/:id', routes.api.food.update);
+	app.delete('/api/food/:id', routes.api.food.remove);
+
+	app.get('/api/outdoors', routes.api.outdoors.list);
+	app.get('/api/outdoors/:id', routes.api.outdoors.get);
+	app.post('/api/outdoors', routes.api.outdoors.create);
+	app.put('/api/outdoors/:id', routes.api.outdoors.update);
+	app.delete('/api/outdoors/:id', routes.api.outdoors.remove);
+
+	app.get('/api/shopping', routes.api.shopping.list);
+	app.get('/api/shopping/:id', routes.api.shopping.get);
+	app.post('/api/shopping', routes.api.shopping.create);
+	app.put('/api/shopping/:id', routes.api.shopping.update);
+	app.delete('/api/shopping/:id', routes.api.shopping.remove);
+
+	app.get('/api/sight', routes.api.sight.list);
+	app.get('/api/sight/:id', routes.api.sight.get);
+	app.post('/api/sight', routes.api.sight.create);
+	app.put('/api/sight/:id', routes.api.sight.update);
+	app.delete('/api/sight/:id', routes.api.sight.remove);
 };
