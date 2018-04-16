@@ -15,7 +15,7 @@ Rule.add({
 
 });
 
-Rules.defaultColumns = 'title, description';
+Rule.defaultColumns = 'title, description';
 
 Rule.register();
 exports.Rule = Rule;
