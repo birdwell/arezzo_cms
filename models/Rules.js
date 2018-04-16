@@ -6,11 +6,13 @@ var Rule = new keystone.List('Rule');
 
 Rule.add({ 
     title: { type: Types.Text, required: true, default: '', initial: true },
-    description: { type: Types.Text, required: true, default: '' },
+    description: { type: Types.Text, required: true, default: '', initial: true},
     fine: {type: Types.Money},
     penalty: {type: Types.Text, default: ''},
-    startTime: { type: Types.Datetime, default: Date.now },
-	endTime: { type: Types.Datetime, default: Date.now },
+    startTimeInEffect: { type: Types.Datetime, default: Date.now },
+	endTimeInEffect: { type: Types.Datetime, default: Date.now },
+    mediaLinks: { type: Types.TextArray },
+    images: { type: Types.CloudinaryImages },
 
 
 });
