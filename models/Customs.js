@@ -6,7 +6,7 @@ var Custom = new keystone.List('Custom');
 
 Custom.add({ 
     title: { type: Types.Text, required: true, default: '', initial: true },
-    description: { type: Types.Text, required: true, default: '' },
+    description: { type: Types.Text, required: true, default: '', initial: true },
     startTime: { type: Types.Datetime, default: Date.now },
 	endTime: { type: Types.Datetime, default: Date.now },
     location: { type: Types.Location, default: '', enableMapsAPI: true },
